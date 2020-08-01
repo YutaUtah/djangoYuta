@@ -57,3 +57,19 @@ PAGES FOLDER
 1) edit views.py create home_view function and import HttpResponse(to make HTML functional)
 
 2) go to urls.py and follow the instruction in the commented areas
+
+>> print hello in the main pages
+print(request.user) returns the name of the users youve defined
+
+in order to make templates, use render function in views.py and create a temaplate in src/templates/<>.html
+then change the setting >> templates >> DIR to where the templates directory is >> os.path.join(BASE_DIR,'templates')
+
+templates override:
+    - {% block content %}
+    replace me
+    {% endblock %}
+
+    - {% include <html name> %}
+
+    - if you wanna use python syntax in {}
+        then use {% for <whatever python syntax you wanna implement>%} input the variable with {{variable}} {% endfor %}
