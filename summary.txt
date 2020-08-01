@@ -1,0 +1,6 @@
+python manage.py createsuperuser enables you to create a new user in /admin/
+
+creating app(component) is very narrowly focused:
+(under src directory)$ python3 manage.py startapp <product name>
+
+create a class in model.py
