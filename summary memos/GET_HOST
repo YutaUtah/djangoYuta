@@ -1,0 +1,7 @@
+action argument in <form> element enables you to create middle tag i.e. action='/search/' then 2222.2222/search/
+method can be either GET or HOST
+    GET: go to the link and actually GET the info
+    POST: save the info in the backend
+
+so in the <form> you wanna use POST to store the backend data however, it returns "forbidden" error. in that case,
+you need to overcome the security status, which is {% csrf_token %}

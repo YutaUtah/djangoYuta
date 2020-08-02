@@ -1,0 +1,36 @@
+
+1) to create an object i.e. product in the admin page
+    - create a function in products/views.py by defining an object product_detail_view
+    - render product/detail.html
+    - create detail.html file and also create product folder under templates folders
+    - craete object in product_detail_view so object is generalizable
+
+***********************************************************************************************
+
+TEMPLATES USAGE(design)
+
+in this project scenario we create product_detail.html under products >> products >> product_detail.html
+
+***********************************************************************************************
+
+try to keep all the templates html within its own directory like products pages etc (inside of the each app)
+
+
+
+
+
+
+***********************************************************************************************
+def product_create_view(request):
+    form = ProductForm(request.POST or None) ###### render
+
+    if form.is_valid():
+        form.save()
+        form = ProductForm(request.POST or None) ###### re-render
+        form = ProductForm() ###### back to create form object again
+
+    context = {
+        'form': form
+    }
+    return render(request, "products/product_create.html", context)
+***********************************************************************************************
