@@ -1,0 +1,7 @@
+Validation:
+    if you wanna add validation i.e. if the email is not the format of .edu then the email address is invalid,
+    add the function "def clean_title" in products/forms.py. you dont have to do anything but to add the function
+    follow by clean_<field_name>()
+
+    if you inherit forms.ModelForm then you need to nest class Meta,
+    if you inherit forms.Form then you do not need to nest class Meta,
