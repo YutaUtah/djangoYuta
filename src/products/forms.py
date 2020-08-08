@@ -5,7 +5,7 @@ from .models import Product
 class ProductForm(forms.ModelForm):
     title       = forms.CharField(label='',
                             widget=forms.TextInput(attrs={"placeholder": "Your title"}))
-
+    email       = forms.EmailField()
     description = forms.CharField(
         required=False,
         widget=forms.Textarea(
@@ -24,8 +24,10 @@ class ProductForm(forms.ModelForm):
 
     class Meta:
         model = Product   # from models.Product
+        # this will change the format order in the pages
         fields = [
             'title',
+            'email',
             'description',
             'price'
         ]
@@ -38,6 +40,13 @@ class ProductForm(forms.ModelForm):
         if not "news" in title:
             raise forms.ValidationError("This is not valid title")
         return title
+
+    def clean_email(self, *args, **kargs):
+        email = self.cleaned_data.get("email")
+        if not email.endswith(".edu"):
+            raise forms.ValidationError("This is not valid email")
+        return email
+
 
 class RawProductForm(forms.Form):
     title       = forms.CharField(label='', widget=forms.TextInput(attrs={"placeholder": "Your title"}))

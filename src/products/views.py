@@ -6,6 +6,7 @@ from .models import Product
 
 
 
+
 # def product_create_view(request):
 #     my_form = RawProductForm(request.GET)
 #     if request.method == "POST":
@@ -33,7 +34,11 @@ from .models import Product
 #     return render(request, "products/product_create.html", context)
 
 def product_create_view(request): #django usage
-    form = ProductForm(request.POST or None)
+    # initial data is passed on through context >> dictionalized by "form"
+    initial_data = {
+        'title': 'this is an awesome title!'
+    }
+    form = RawProductForm(request.POST or None, initial=initial_data)
 
     if form.is_valid():
         form.save()
