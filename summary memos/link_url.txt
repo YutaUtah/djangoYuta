@@ -34,3 +34,7 @@ def product_create_view(request):
     }
     return render(request, "products/product_create.html", context)
 ***********************************************************************************************
+
+DYNAMIC URLS
+    - create an url to instantiate the object in dynamic_lookup_view function
+    - set it up in url.py using <>

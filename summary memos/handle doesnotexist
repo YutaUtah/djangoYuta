@@ -1,0 +1,31 @@
+# HANDLING THE PAGE DOES NOT RENDER ERROR
+    if you take a look at views.py >> dynamic_lookup_view function and within it instantiate the object from "get_object_or_404"
+    A(from django.shortcuts import render, get_object_or_404) you can handle the error easily
+
+    or you can also use from django.http import Http404
+
+************************************************************************************************************************
+you can refer to the template when deleting the object via '/delete' and redirect to the right page
+
+obj = get_object_or_404(Product, id=id)
+# POST Request
+if request.method == "POST":
+    obj.delete()
+    return redirect('../../')
+context = {
+    "object": obj
+
+************************************************************************************************************************
+
+** IMPORTANT
+if you want to create hyperlink and get back to the specific link create a function get_absolute_url in the class called Product
+in model.py
+easiest way is # return f"/products/{self.id}/" but use reverse function
+
+************************************************************************************************************************
+
+** IMPORTANT
+now it basically covers a lot of portions of how we use django however, if you go to urls.py in trydjango >> urls.py then
+you see a lot of overlaps and possibilities that you might make mistakes (like if you created the same url names or variables)
+>>>>> you create the another urls.py under products folder
+    1. move the common urls under products directory and use include() in the other urls.py(in this case it is trydjango>>urls.py)
