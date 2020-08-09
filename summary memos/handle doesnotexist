@@ -29,3 +29,7 @@ now it basically covers a lot of portions of how we use django however, if you g
 you see a lot of overlaps and possibilities that you might make mistakes (like if you created the same url names or variables)
 >>>>> you create the another urls.py under products folder
     1. move the common urls under products directory and use include() in the other urls.py(in this case it is trydjango>>urls.py)
+
+
+************************************************************************************************************************
+this is basically the end of the course as we went over the introductions
