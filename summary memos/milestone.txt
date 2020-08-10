@@ -1,0 +1,17 @@
+1. create a new app named blog
+
+2. app 'Blog' to your Django Project
+
+3. create a model named article
+
+4. run migrations
+
+5. create a ModelForm for Article
+
+6. create 'article_list.html' & 'article_detail.html' template
+
+7. add article model to the admin
+
+8. save a new article object in the admin
+
+confused start here: https://kirr.co/9ypik6
